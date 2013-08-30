@@ -36,8 +36,8 @@
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.parallax-1.1.js"></script>
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap-scrollspy.js"></script>
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap-collapse.js"></script>
-    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.localscroll-1.2.7-min.js"></script>
-    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.localScroll.min.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.scrollTo.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
@@ -80,29 +80,13 @@
   <script>
     $(document).ready(function(){
       $('#navi').localScroll(800);
-      RepositionNav();
       $(window).resize(function(){
         RepositionNav();
-      });
-      // .parallax(xPosition, adjuster, inertia, outerHeight) options:
-      // xPosition - Horizontal position of the element.
-      // adjuster - y position to start from.
-      // inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling.
-      // outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport.
-      $('#intro').parallax("50%", 0, 0.1, true);
-      $('#second').parallax("50%", 0, 0.1, true);
-      $('.bg').parallax("5%", 3000, 0.8, true);
-      $('.bg2').parallax("30%", 3500, 0.8, true);
-      $('#third').parallax("50%", 0, 0.1, true);
-      $('#fourth').parallax("50%", 0, 0.1, true);
+      }).trigger('resize');
     })
     $('#navbar').scrollspy();
+    $(".collapse").collapse();
   </script>
-
-  <script>
-    $(".collapse").collapse()
-  </script>
-
 
   <!-- page fade effect - this simple trick first waits for page to load(images, content) and after it's loaded fades it. You can remove it by deleting this section. -->
   <!-- read documentation -->
